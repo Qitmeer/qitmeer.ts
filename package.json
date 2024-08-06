@@ -25,10 +25,7 @@
   "homepage": "https://github.com/Qitmeer/qitmeer.ts#readme",
   "devDependencies": {
     "@types/mocha": "^10.0.7",
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
     "bs58": "^6.0.0",
-    "eslint": "^9.8.0",
     "mocha": "^10.7.0",
     "standard": "^16.0.3",
     "ts-node": "^10.9.2",
