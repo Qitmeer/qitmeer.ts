@@ -4,14 +4,15 @@
 name: publish code on npm
 
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches:
+      - main
+  repository_dispatch:
     types:
-      - closed
+      - webhook
 
 jobs:
   publish:
-    if: ${{ github.event.pull_request.merged }}
     runs-on: ubuntu-latest
     permissions:
       id-token: write
