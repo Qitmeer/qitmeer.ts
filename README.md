@@ -13,4 +13,5 @@ cd qitmeerTs && npm i
 
 ```bash
 npm run test
+yarn run test
 ```
