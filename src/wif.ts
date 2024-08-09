@@ -6,11 +6,11 @@ import qitmeer58check from "./qitmeer58check";
 import types from "./types";
 import * as uint8arraytools from "uint8array-tools";
 
-interface DecodeResult {
+type DecodeResult = {
   version: number;
   privateKey: Uint8Array;
   compressed: boolean;
-}
+};
 
 function decodeRaw(buffer: Uint8Array, version?: number): DecodeResult {
   // check version only if defined

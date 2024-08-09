@@ -2,7 +2,7 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-import * as varuint from "varuint-bitcoin";
+const varuint = require("varuint-bitcoin");
 import Transaction from "./transaction";
 import * as hash from "./hash";
 const fastMerkleRoot = require("merkle-lib/fastRoot");
@@ -10,16 +10,16 @@ import * as uint8arraytools from "uint8array-tools";
 
 const BlockHeaderSize = 4 + 32 + 32 + 32 + 4 + 4 + (4 + 1 + 1 + 168);
 
-interface PowData {
+type PowData = {
   edge_bits: number;
   circle_nonces: Uint8Array;
-}
+};
 
-interface BlockPow {
+type BlockPow = {
   nonce: number;
   pow_type: number;
   proof_data: PowData;
-}
+};
 
 export default class Block {
   version: number;

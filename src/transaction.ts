@@ -7,20 +7,20 @@ import * as varuint from "varuint-bitcoin";
 import * as hash from "./hash";
 import types from "./types";
 import typecheck from "./typecheck";
-import Script from "script";
+import Script from "./script";
 import * as uint8arraytools from "uint8array-tools";
-interface VinObj {
+type VinObj = {
   txid: Uint8Array;
   vout: number;
   sequence: number;
   script: Uint8Array;
-}
+};
 
-interface VoutObj {
+type VoutObj = {
   coinId: any;
   amount: bigint;
   script: Uint8Array;
-}
+};
 
 export default class Transaction {
   version: number;

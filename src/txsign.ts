@@ -12,25 +12,25 @@ import * as Signature from "./signature";
 import { NetworkConfig } from "./networks";
 import * as uint8arraytools from "uint8array-tools";
 
-interface InputOptions {
+type InputOptions = {
   prevOutType?: string;
   prevOutScript?: Script;
   lockTime?: number;
   sequence?: number;
-}
+};
 
-interface Input {
+type Input = {
   input: Script;
   signatures: any;
   _prevOutId: string;
   prevOutTx: string;
   prevOutIndex: number;
   prevOutType: string;
-  prevOutScript?: Script;
+  prevOutScript?: Script | undefined;
   lockTime: number;
   signature?: Uint8Array;
   pubkey?: Uint8Array;
-}
+};
 
 export default class TxSigner {
   private __inputs: Input[];

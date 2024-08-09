@@ -2,18 +2,18 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-export interface NetworkConfig {
+export type NetworkConfig = {
   pubKeyHashAddrId: number;
   ScriptHashAddrID: number;
   PrivateKeyID: number;
-}
+};
 
-export interface Networks {
+export type Networks = {
   mainnet: NetworkConfig;
   testnet: NetworkConfig;
   privnet: NetworkConfig;
   mixnet: NetworkConfig;
-}
+};
 
 const networks: Networks = {
   mainnet: {

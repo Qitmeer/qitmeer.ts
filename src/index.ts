@@ -10,12 +10,12 @@ import qitmeer58check from "./qitmeer58check";
 import * as address from "./address";
 import { networks } from "./networks";
 import Transaction from "./transaction";
-import txsign from "./txsign";
+import TxSigner from "./txsign";
 import block from "./block";
 import { map as OPS_MAP } from "./ops/map";
 import script from "./script";
 import * as signature from "./signature";
-const _OPS = require("./ops/ops.json");
+import OPS from "./ops/ops";
 
 export {
   types,
@@ -26,9 +26,9 @@ export {
   address,
   networks,
   Transaction,
-  txsign,
+  TxSigner,
   block,
-  _OPS as OPS,
+  OPS,
   OPS_MAP,
   script,
   signature,

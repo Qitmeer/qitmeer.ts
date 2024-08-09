@@ -2,7 +2,7 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-const OPS = require("./ops.json");
+import OPS from "./ops";
 
 const map: Record<number, string> = {};
 for (const op in OPS) {

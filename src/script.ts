@@ -2,18 +2,18 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
-const OPS = require("./ops/ops.json");
+import OPS from "./ops/ops";
 import { map as OPS_MAP } from "./ops/map";
 import * as utils from "./ops/utils";
 import * as uint8arraytools from "uint8array-tools";
 
-export interface SCRIPT_TYPE {
+export type SCRIPT_TYPE = {
   NONSTANDARD: string;
   NULLDATA: string;
   P2PK: string;
   P2PKH: string;
   P2SH: string;
-}
+};
 
 class Script {
   version: number;
@@ -50,7 +50,10 @@ class Script {
       while (i < buffer.length) {
         const opcode = buffer[i] as number;
         // data chunk
-        if (opcode > OPS.OP_0 && opcode <= OPS.OP_PUSHDATA4) {
+        if (
+          opcode > (OPS.OP_0 as number) &&
+          opcode <= (OPS.OP_PUSHDATA4 as number)
+        ) {
           const d = utils.decode(buffer, i);
 
           // did reading a pushDataInt fail?
@@ -163,13 +166,13 @@ class Script {
       // Lock execution
       if (typeof lockIndex === "number" && lockIndex === index) {
         if (chunk === 0) {
-          uint8arraytools.writeUInt8(buffer, offset, OPS.OP_0);
+          uint8arraytools.writeUInt8(buffer, offset, OPS.OP_0 as number);
           offset += 1;
         } else if ((chunk as number) >= 1 && (chunk as number) <= 16) {
           uint8arraytools.writeUInt8(
             buffer,
             offset,
-            OPS.OP_1 - 1 + (chunk as number)
+            (OPS.OP_1 as number) - 1 + (chunk as number)
           );
           offset += 1;
         } else {
@@ -230,7 +233,7 @@ class Script {
   }
 
   removeCodeSeparator(): Script {
-    this.removeOP(OPS.OP_CODESEPARATOR);
+    this.removeOP(OPS.OP_CODESEPARATOR as number);
     return this;
   }
 }
@@ -240,11 +243,11 @@ class Script {
 function __publicKeyScript(hash: Uint8Array): Script {
   const script = new Script();
   script.stack = [
-    OPS.OP_DUP,
-    OPS.OP_HASH160,
+    OPS.OP_DUP as number,
+    OPS.OP_HASH160 as number,
     hash,
-    OPS.OP_EQUALVERIFY,
-    OPS.OP_CHECKSIG,
+    OPS.OP_EQUALVERIFY as number,
+    OPS.OP_CHECKSIG as number,
   ];
   return script;
 }
@@ -254,20 +257,20 @@ function __cltvScript(hash: Uint8Array, lockTime: number): Script {
   script.stack = [
     "cltv",
     lockTime,
-    OPS.OP_CHECKLOCKTIMEVERIFY,
-    OPS.OP_DROP,
-    OPS.OP_DUP,
-    OPS.OP_HASH160,
+    OPS.OP_CHECKLOCKTIMEVERIFY as number,
+    OPS.OP_DROP as number,
+    OPS.OP_DUP as number,
+    OPS.OP_HASH160 as number,
     hash,
-    OPS.OP_EQUALVERIFY,
-    OPS.OP_CHECKSIG,
+    OPS.OP_EQUALVERIFY as number,
+    OPS.OP_CHECKSIG as number,
   ];
   return script;
 }
 
 function __scriptHash(hash: Uint8Array): Script {
   const script = new Script();
-  script.stack = [OPS.OP_HASH160, hash, OPS.OP_EQUAL];
+  script.stack = [OPS.OP_HASH160 as number, hash, OPS.OP_EQUAL as number];
   return script;
 }
 

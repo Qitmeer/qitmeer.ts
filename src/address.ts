@@ -9,10 +9,10 @@ import types from "./types";
 import typecheck from "./typecheck";
 import * as uint8arraytools from "uint8array-tools";
 
-interface DecodeResult {
+type DecodeResult = {
   version: number;
   hash: Uint8Array;
-}
+};
 
 export { fromBase58Check, toBase58Check, toOutputScript };
 
