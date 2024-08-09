@@ -4,6 +4,13 @@
   "description": "Qirmeer client-side TypeScript library",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
+  "files": [
+    "LICENSE",
+    "dist",
+    "src",
+    "test",
+    "README.md"
+  ],
   "scripts": {
     "test": " npm run unit",
     "unit": "mocha --require ts-node/register ./test/qitmeer.core.ts",
@@ -36,9 +43,6 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   },
-  "bundledDependencies": [
-    "tiny-secp256k1"
-  ],
   "dependencies": {
     "@noble/hashes": "^1.4.0",
     "@types/base-x": "^3.0.6",
@@ -51,8 +55,5 @@
     "tiny-secp256k1": "^1.1.6",
     "uint8array-tools": "^0.0.8",
     "varuint-bitcoin": "^1.1.2"
-  },
-  "bundleDependencies": [
-    "tiny-secp256k1"
-  ]
+  }
 }
