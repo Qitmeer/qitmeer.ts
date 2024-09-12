@@ -11,6 +11,9 @@
     "test",
     "README.md"
   ],
+  "workspaces": [
+    "src/*"
+  ],
   "scripts": {
     "test": " npm run unit",
     "unit": "mocha --require ts-node/register ./test/qitmeer.core.ts",

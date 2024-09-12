@@ -1,0 +1,31 @@
+{
+  "name": "@qng/eip4337-sdk",
+  "description": "Qng Account Abstraction (EIP 4337) contracts SDK",
+  "version": "0.6.0",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:clean": "npm run clean && npm run build",
+    "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qitmeer/qitmeer.ts"
+  },
+  "keywords": [
+    "sdk",
+    "qng",
+    "smart",
+    "contracts",
+    "accipt-abstraction",
+    "eip-4337"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "git+https://github.com/Qitmeer/qitmeer.ts/issues"
+  },
+  "devDependencies": {
+    "@qng/eip4337-contracts": "^0.6.0",
+    "@account-abstraction/sdk": "^0.6.0"
+  }
+}
