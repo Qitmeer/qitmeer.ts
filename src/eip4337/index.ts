@@ -8,4 +8,11 @@ import {
   HttpRpcClient,
   BaseAccountAPI,
 } from "./qngAccountAPI";
-export { QngAccountAPI, PaymasterAPI, HttpRpcClient, BaseAccountAPI };
+import { MeerChangeAPI } from "./meerchange";
+export {
+  QngAccountAPI,
+  PaymasterAPI,
+  HttpRpcClient,
+  BaseAccountAPI,
+  MeerChangeAPI,
+};
