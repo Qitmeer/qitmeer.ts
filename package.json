@@ -15,7 +15,7 @@
     "src/*"
   ],
   "scripts": {
-    "test": " npm run unit",
+    "test": " npm run unit && cd src/eip4337 && npm run test",
     "unit": "mocha --require ts-node/register ./test/qitmeer.core.ts",
     "build": "tsc",
     "build:clean": "yarn clean && yarn build",
