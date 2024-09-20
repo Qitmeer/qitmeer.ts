@@ -29,7 +29,7 @@ export class MeerChangeAPI {
       txid = `0x${txid}`;
     }
     const meerchangeContract = await this._getMeerChangeContract();
-    return meerchangeContract.interface.encodeFunctionData("export4337", [
+    return meerchangeContract.interface.encodeFunctionData("export", [
       ethers.utils.hexZeroPad(txid, 32),
       idx,
       fee,
