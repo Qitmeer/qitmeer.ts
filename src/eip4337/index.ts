@@ -9,10 +9,20 @@ import {
   BaseAccountAPI,
 } from "./qngAccountAPI";
 import { MeerChangeAPI } from "./meerchange";
+import {
+  EntryPointAddr,
+  QngAccountFactoryAddr,
+  QngPaymasterAddr,
+  MeerChangeAddr,
+} from "./address";
 export {
   QngAccountAPI,
   PaymasterAPI,
   HttpRpcClient,
   BaseAccountAPI,
   MeerChangeAPI,
+  EntryPointAddr,
+  QngAccountFactoryAddr,
+  QngPaymasterAddr,
+  MeerChangeAddr,
 };
