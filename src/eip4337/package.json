@@ -1,7 +1,7 @@
 {
   "name": "@qng/eip4337-sdk",
   "description": "Qng Account Abstraction (EIP 4337) contracts SDK",
-  "version": "0.6.8",
+  "version": "0.6.10",
   "main": "./dist/index.js",
   "files": [
     "dist/"
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@qng/eip4337-contracts": "^0.6.0",
-    "@qng/meerchange-contracts": "^0.0.3",
+    "@qng/meerchange-contracts": "^0.0.4",
     "@account-abstraction/sdk": "^0.6.0",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.3",
     "@nomicfoundation/hardhat-toolbox": "^1.0.2",
