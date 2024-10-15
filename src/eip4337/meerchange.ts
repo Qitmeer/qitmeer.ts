@@ -1,7 +1,6 @@
 import * as contracts from "@qng/meerchange-contracts";
 
 import { Provider } from "@ethersproject/providers";
-import { ethers } from "ethers";
 export class MeerChangeAPI {
   meerchangeContract: any;
   meerchangeAddr: string;
@@ -19,19 +18,10 @@ export class MeerChangeAPI {
     }
     return this.meerchangeContract;
   }
-  async encodeExport4337(
-    txid: string,
-    idx: number,
-    fee: number,
-    signature: string
-  ) {
-    if (!txid.startsWith("0x")) {
-      txid = `0x${txid}`;
-    }
+  async encodeExport4337(ops: string, fee: number, signature: string) {
     const meerchangeContract = await this._getMeerChangeContract();
     return meerchangeContract.interface.encodeFunctionData("export", [
-      ethers.utils.hexZeroPad(txid, 32),
-      idx,
+      ops,
       fee,
       signature,
     ]);
