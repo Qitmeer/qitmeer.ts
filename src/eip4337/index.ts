@@ -14,7 +14,7 @@ import {
   QngAccountFactoryAddr,
   QngPaymasterAddr,
   MeerChangeAddr,
-} from "./address";
+} from "@qng/eip4337-contracts";
 export {
   QngAccountAPI,
   PaymasterAPI,

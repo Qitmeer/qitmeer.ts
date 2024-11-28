@@ -10,7 +10,7 @@ import { expect } from "chai";
 import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
 import { ethers } from "hardhat";
 import { DeterministicDeployer } from "@account-abstraction/sdk";
-import { QngAccountAPI } from "../";
+import { QngAccountAPI, MeerChangeAddr } from "../";
 import {
   SampleRecipient,
   SampleRecipient__factory,
@@ -32,14 +32,13 @@ describe("QngAccountAPI", () => {
   before("init", async () => {
     entryPoint = await new EntryPoint__factory(signer).deploy();
     beneficiary = await signer.getAddress();
-
     recipient = await new SampleRecipient__factory(signer).deploy();
     owner = Wallet.createRandom();
     DeterministicDeployer.init(ethers.provider);
     const factoryAddress = await DeterministicDeployer.deploy(
       new QngAccountFactory__factory(),
       0,
-      [entryPoint.address]
+      [entryPoint.address, MeerChangeAddr]
     );
     api = new QngAccountAPI({
       provider,
