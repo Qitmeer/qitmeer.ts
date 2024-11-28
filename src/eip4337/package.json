@@ -31,7 +31,7 @@
     "url": "git+https://github.com/Qitmeer/qitmeer.ts/issues"
   },
   "devDependencies": {
-    "@qng/eip4337-contracts": "^0.6.0",
+    "@qng/eip4337-contracts": "^0.6.2",
     "@qng/meerchange-contracts": "^0.0.4",
     "@account-abstraction/sdk": "^0.6.0",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.3",
