@@ -283,8 +283,8 @@ export abstract class BaseAccountAPI {
     }
 
     const partialUserOp: any = {
-      sender: this.getAccountAddress(),
-      nonce: info.nonce ?? this.getNonce(),
+      sender: await this.getAccountAddress(),
+      nonce: info.nonce ?? (await this.getNonce()),
       initCode,
       callData,
       callGasLimit,
